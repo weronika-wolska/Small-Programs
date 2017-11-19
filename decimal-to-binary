@@ -1,0 +1,40 @@
+/* A program written by Weronika Wolska
+	to compute the base 2 representation
+	of a number */
+	
+#include <stdio.h>
+
+int main(void)
+{
+
+	int N;
+	int digit = 0;
+	int binary[8] = {0};
+	int i = 0;
+	int count = 0;
+	
+	printf("Enter the number you want to convert to binary: \t");
+	scanf("%d", &N);
+	
+	while (N != 0)
+	{
+		
+		digit = N % 2;
+		
+		N = N / 2;
+		
+		binary[i] = digit;		// the ith element in the array becomes the remainder of N/2
+		
+		count++;			// to keep track of how many values binary has
+		
+		i++; 
+		
+	}
+	
+	for(i=count-1; i>=0; i--)		// print out array in reverse order
+	{
+		printf("%d", binary[i]);
+	}
+	
+	return 0;
+}
