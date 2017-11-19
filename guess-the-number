@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	int guess;
+	int number = rand() %11;
+	int i;
+	int chances = 2;
+	
+	for(i=0;i<3; i++)
+	{
+		printf("Please enter your guess between 1 and 10: \t");
+		scanf("%d", &guess);
+		
+		if(guess<1 || guess>10)
+		{
+			printf("Your guess was outside the range 1 to 10 \n.");
+			i-1;
+			continue;
+		}
+		
+		if(guess>number)
+		{
+			printf(" You guessed incorrectly, the answer is smaller \n");
+			printf(" You have %d guess(es) remaining \n", chances);
+			chances--;
+		}
+		
+		if(guess<number)
+		{
+			printf(" You guessed incorrectly, the answer is bigger \n");
+			printf(" You have %d guess(es) remaining \n", chances);
+			chances--;
+		}
+		
+		if(guess==number)
+		{
+			printf("You are correct! the answer is %d", number);
+			break;
+		}
+	}
+	
+	return 0;
+}
