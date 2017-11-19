@@ -1,0 +1,54 @@
+/* A program written by Weronika Wolska
+to convert seconds into days, hours, minutes
+and seconds, using a function that uses pointers
+to output the values */
+
+#include <stdio.h>
+
+void convert_time(int total_secs, int *days, int *hours, int *minutes, int *seconds);
+
+int main(void)
+{
+	int ans;
+	int sec;
+	int *days;
+	int *hours;
+	int *minutes;
+	int *seconds;
+	int days1 = 0;
+	int hours1 = 0;
+	int minutes1 = 0;
+	int seconds1 = 0;
+	
+	printf("Enter the time in seconds: \t");
+	scanf("%d", &sec);
+	
+	days = &days1;
+	hours = &hours1;
+	minutes = &minutes1;
+	seconds = &seconds1;
+	convert_time(sec, days, hours, minutes, seconds);
+	
+	printf("%d days, %d hours, %d minutes, %d seconds", days1, hours1, minutes1, seconds1);
+	
+}
+
+void convert_time(int total_secs, int *days, int *hours, int *minutes, int *seconds)
+{
+
+	int remaining_secs = total_secs ;
+	
+	*days = remaining_secs / (24*60*60);
+	
+	remaining_secs %= (24*60*60);
+	
+	*hours = remaining_secs / (60*60) ;
+	
+	remaining_secs %= (60*60) ;
+	
+	*minutes = remaining_secs / 60;
+	
+	remaining_secs %= 60;
+	
+	*seconds = remaining_secs ;
+}
