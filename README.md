@@ -8,6 +8,7 @@
 
 int main(void)
 {
+
 	double a, b, c;
 	
 	double r1, r2;
