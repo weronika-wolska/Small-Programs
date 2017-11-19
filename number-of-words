@@ -1,0 +1,26 @@
+/* A program written by Weronika Wolska 
+    to count the number of words in a string */
+
+#include <stdio.h>
+
+#define N 100
+
+int main(void)
+{
+	char sentence[N];
+	int i;
+	int count = 0;
+	
+	printf("Enter sentence: \t");			// user input
+	fgets(sentence, N, stdin);
+	
+	for(i=0; i<N; i++)
+	{
+		if(sentence[i]==' ' || sentence[i]=='\t' || sentence[i]=='\n')		// keep track of how many white spaces are in a string
+			count++;
+	}
+	
+	printf("The number of words is %d", count);									// print out the number of words
+	
+	return 0;
+}
