@@ -1,0 +1,42 @@
+/* A program written by Weronika Wolska to check
+	if an array is a palindrome */
+
+#include <stdio.h>
+
+int main(void)
+{
+	int a[10];
+	int b[10];
+	int i;
+	int x=9;
+	int count=0;
+	
+	printf("Enter the values into the array: \n");
+	
+	for(i=0; i<10; i++)		// input array
+	{
+		scanf("%d", &a[i]);
+	}
+	
+	for(i=0; i<10; i++)		// setting b to be the a in reverse order
+	{
+		b[i] = a[x];
+		x--;
+		printf("%d \t", b[i]);
+	}
+	
+	for(i=0; i<10; i++)		// seeing if the ith value in both arrays is the same
+	{
+		if(a[i] == b[i])
+			count++;
+	}
+	
+	if(count == 10)
+		printf("\n The array is a palindrome \n");		// if ALL values in both arrays equal to each other, then a is a palindrome
+	
+	else
+		printf("\n The array is not a palindrome \n");
+	
+return 0;
+
+}
