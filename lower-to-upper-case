@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+#define MAX_STR_LEN 50
+
+int main(void)
+{
+
+	char msg[MAX_STR_LEN];
+	
+	printf("Enter message: \t");
+	scanf("%s", msg);
+	
+	int i=0;
+	
+	while (i< MAX_STR_LEN && msg[i] != '\0' )
+	{
+		if (msg[i] >= 'a' && msg[i] <= 'z')
+			msg[i] = msg[i] - 32;
+	
+		i++;
+		
+	}
+	
+	printf("%s", msg);
+	
+	return 0;
+}
