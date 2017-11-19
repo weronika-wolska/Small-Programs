@@ -1,0 +1,22 @@
+/* A program written by Weronika Wolska to
+	display the multiplication table of the number N */
+
+#include <stdio.h>
+
+int main(void)
+{
+	int number;
+	int i;
+	int answer;
+	
+	printf(" Which number would you like to print tables for? \t");
+	scanf("%d", &number);
+	
+	for(i=0; i<=12; i++)
+	{
+		answer=i*number;
+		printf("%d x %d = %d \n", i, number, answer);
+	}
+	
+	return 0;
+}
