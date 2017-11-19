@@ -1,0 +1,44 @@
+/* A program written by Weronika Wolska to get 
+	user to guess a number between 1 and 10 */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	int guess;
+	int number = rand() %11;
+	int i;
+	
+	for(i=0; i<20; i++)
+	{
+		printf("Guess the number! \n");
+		scanf("%d", &guess);
+		
+		if(guess < 1 || guess >10)
+		{
+			printf("Oops! Number is not within the range! \n");
+			continue;
+		}
+		
+		if(guess == number)
+		{
+			printf("You guessed correctly, the answer was %d \n", number);
+			break;
+		}
+		
+		if(guess < number)
+		{
+			printf("You guessed incorrectly, the answer is greater \n");
+			continue;
+		}
+		
+		if(guess > number)
+		{
+			printf("You guessed incorrectly, the number is smaller \n");
+			continue;
+		}
+	}
+	
+	return 0;
+}
